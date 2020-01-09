@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/backgroundcolor"
+
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+
+    <Switch
+        android:textColor="?attr/text_color_arabic"
+
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Day or Night ?"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="331dp" />
+
+    <Button
+        android:textColor="?attr/text_color_arabic"
+        android:layout_margin="20dp"
+        android:id="@+id/btn_go_MainAct"
+        android:text="go back to main Activity"
+        android:background="?attr/button_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

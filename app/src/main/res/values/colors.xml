@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBackground">#B4B4B4</color>
+    <color name="colorBackgroundCard">#EBEBEB</color>
+    <color name="colorBackgroundCardTranslate">#BDBDBD</color>
+    <color name="text_sorat_color">#303030</color>
+    <color name="text_translate_color">#5A5C68</color>
+</resources>

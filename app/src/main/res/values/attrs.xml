@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ds">
+        <attr name="backgroundcolor" format="color"/>
+        <attr name="card_backgroundcolor_arabic" format="color"/>
+        <attr name="card_backgroundcolor_translate" format="color"/>
+        <attr name="text_color_arabic" format="color"/>
+        <attr name="text_color_arabic_translate" format="color"/>
+        <attr name="tintcolor" format="color"/>
+        <attr name="button_color" format="color"/>
+
+    </declare-styleable>
+</resources>
