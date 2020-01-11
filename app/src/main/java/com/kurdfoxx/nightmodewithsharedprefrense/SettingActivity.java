@@ -13,20 +13,19 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity {
-    Switch mySwitch;
+   public static Switch mySwitch;
     boolean isDarkMode =false;
-    private static final String DARKMODE = "login";
+    private static final String DARKMODE = "dark";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        myboolian();
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.darkTheme);
-            isDarkMode =true;
+            isDarkMode=true;
 
         } else {
             setTheme(R.style.AppTheme);
-            isDarkMode =false;
+            isDarkMode=false;
 
 
         }
@@ -42,21 +41,27 @@ public class SettingActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    isDarkMode=true;
+                    myboolian();
+
+
                     restartApp();
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    isDarkMode=false;
+                    myboolian();
+
                     restartApp();
 
                 }
             }
         });
-
+        myboolian();
 
         Button buttonGoMain=findViewById(R.id.btn_go_MainAct);
         buttonGoMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myboolian();
                 startActivity(new Intent(SettingActivity.this,MainActivity.class));
 
             }
@@ -72,7 +77,7 @@ public class SettingActivity extends AppCompatActivity {
 
     }
     public void myboolian(){
-      //     isDarkMode =!isDarkMode;  //change isDarkMode from false to true by this
+     // isDarkMode =!isDarkMode;  //change isDarkMode from false to true by this
         SharedPreferences sharedPreferences =getSharedPreferences(DARKMODE,MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean("ISDARKMODE", isDarkMode);
@@ -81,35 +86,5 @@ public class SettingActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onRestart() {
-        myboolian();
 
-        super.onRestart();
-    }
-
-    @Override
-    protected void onResume() {
-        myboolian();
-
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        myboolian();
-
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onStart() {        myboolian();
-
-        super.onStart();
-    }
-    @Override
-    protected void onStop() {
-        myboolian();
-        super.onStop();
-    }
 }

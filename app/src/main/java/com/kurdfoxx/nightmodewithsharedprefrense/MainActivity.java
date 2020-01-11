@@ -8,25 +8,20 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String DARKMODE = "login";
-    boolean isDarkMode = false;
+    private static final String DARKMODE = "dark";
+    boolean isDarkMode ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getData();
+        Toast.makeText(this, "is datk ?"+isDarkMode, Toast.LENGTH_SHORT).show();
+
         if (isDarkMode){
-
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
                 setTheme(R.style.darkTheme);
-                isDarkMode =true;
-            } else {
-                setTheme(R.style.AppTheme);
-                isDarkMode =false;
-
-            }
-        }
+        }else {setTheme(R.style.AppTheme);}
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button button=findViewById(R.id.button_go_to_setting_activity);
@@ -43,36 +38,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(DARKMODE, MODE_PRIVATE);
         isDarkMode = sharedPreferences.getBoolean("ISDARKMODE", false);
 
+
+
     }
 
-    @Override
-    protected void onStart() {
-        getData();
-        super.onStart();
-    }
 
-    @Override
-    protected void onDestroy() {
-        getData();
-        super.onDestroy();
-    }
 
-    @Override
-    protected void onResume() {
-        getData();
-        super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        getData();
-        super.onStop();
-    }
-
-    @Override
-    protected void onRestart() {
-        getData();
-        super.onRestart();
-    }
 
 }
